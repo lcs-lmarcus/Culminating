@@ -16,11 +16,14 @@ struct FolderView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
+                .padding(.horizontal)
             Text (providedFolder.name)
+                .fontWeight(.semibold)
+                .font(.system(size: 30))
         }
     }
 }
 
 #Preview {
-    FolderView(providedFolder: exampleFolder)
+    FolderView(providedFolder: exampleFolder[0])
 }

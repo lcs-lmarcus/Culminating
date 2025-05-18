@@ -7,14 +7,17 @@
 
 import Foundation
 
-struct TourFolder {
+struct TourFolder: Identifiable {
     // MARK: Stored properties
+    var id = UUID()
     let name: String
     let image: String
+    let guides: [TourGuide]
 }
 
 // Create an example of a tour folder
-let exampleFolder = TourFolder(
+let exampleFolder: [TourFolder] = [TourFolder(
     name: "Toronto",
-    image: "Toronto"
-)
+    image: "Toronto",
+    guides: exampleTourGuide
+)]
