@@ -11,7 +11,7 @@ import SwiftUI
 struct CulminatingApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GuideDetailView(guideToShow: exampleTourGuide)
         }
     }
 }

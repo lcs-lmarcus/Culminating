@@ -30,3 +30,5 @@ let exampleTourGuide = TourGuide(
     rating: 5.0,
     caption: "The CN Tower is a 553.3 m-high communications and observation tower in Toronto, Ontario, Canada."
 )
+
+let guide = [exampleTourGuide]
