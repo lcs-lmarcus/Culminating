@@ -45,5 +45,5 @@ struct GuideDetailView: View {
 }
 
 #Preview {
-    GuideDetailView(guideToShow: exampleTourGuide)
+    GuideDetailView(guideToShow: exampleTourGuide[0])
 }

@@ -7,12 +7,15 @@
 
 import SwiftUI
 
-struct PlaceView: View {
+struct PlaceListView: View {
     var body: some View {
-        Text("Hello")
+        NavigationStack {
+            
+            
+        }
     }
 }
 
 #Preview {
-    PlaceView()
+    PlaceListView()
 }

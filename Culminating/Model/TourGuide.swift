@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct TourGuide {
+struct TourGuide: Identifiable {
     
     // MARK: Stored properties
+    var id = UUID()
     let name: String
     let date: String
     let address: String
@@ -21,14 +22,12 @@ struct TourGuide {
 }
 
 // Create an example of a tour guide
-let exampleTourGuide = TourGuide(
+let exampleTourGuide: [TourGuide] = [TourGuide(
     name: "CN Tower",
     date: "April 14, 2025",
     address: "290 Bremner Blvd, Toronto, ON M5V 3L9",
     folder: "Toronto",
     image: "CN Tower",
     rating: 5.0,
-    caption: "The CN Tower is a 553.3 m-high communications and observation tower in Toronto, Ontario, Canada."
-)
+    caption: "The CN Tower is a 553.3 m-high communications and observation tower in Toronto, Ontario, Canada.")]
 
-let guide = [exampleTourGuide]
