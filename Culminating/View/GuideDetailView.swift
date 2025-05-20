@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct GuideDetailView: View {
+    @Environment(GuideViewModel.self)     var viewModel
+    @Environment(\.dismiss) private var dismiss
+    
     let guideToShow : TourGuide
     var body: some View {
         NavigationStack {
@@ -16,9 +19,9 @@ struct GuideDetailView: View {
                     Text (guideToShow.name)
                         .padding(.trailing)
                 }
-                    .foregroundStyle(.gray)
-                    .font(.system(size: 20))
-                    Spacer()
+                .foregroundStyle(.gray)
+                .font(.system(size: 20))
+                Spacer()
                 
                 HStack {
                     Image (guideToShow.image)
@@ -38,9 +41,22 @@ struct GuideDetailView: View {
                     }
                 }
                 Spacer()
+                
+                //                // Delete Button
+                //                Button(role: .destructive) {
+                //                    if let idx = viewModel.guides.firstIndex(where: { $0.id == guideToShow.id } {
+                //                        viewModel.deleteGuides(at: IndexSet(integer: idx))
+                //                        dismiss()
+                //                    }
+                //                } label: {
+                //                    Label("Delete Guide", systemImage: "trash")
+                //                }
+                //                .padding()
+                
+                    .navigationTitle(guideToShow.name)
             }
-            .navigationTitle(guideToShow.name)
         }
+        
     }
 }
 

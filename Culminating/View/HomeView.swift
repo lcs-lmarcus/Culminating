@@ -20,6 +20,7 @@ struct HomeView: View {
                     FolderView(providedFolder: currentFolder)
                 }
             }
+            
         }
     }
 }
