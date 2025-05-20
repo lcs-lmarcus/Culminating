@@ -62,4 +62,5 @@ struct GuideDetailView: View {
 
 #Preview {
     GuideDetailView(guideToShow: exampleTourGuide[0])
+        .environment(GuideViewModel())
 }

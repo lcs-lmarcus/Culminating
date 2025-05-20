@@ -8,9 +8,14 @@
 import Foundation
 
 @Observable
-class GuideViewModel{
+class GuideViewModel: ObservableObject {
     
     // MARK: Stored properties
+//    // List of folders
+//    @Published var folders: [String] = []
+//    
+//    // List of guides
+//    @Published var guides: [TourGuide] = exampleTourGuide
     
     // MARK: Functions
     func FavouriteGuide() {

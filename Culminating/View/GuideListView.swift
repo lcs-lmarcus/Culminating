@@ -22,6 +22,7 @@ struct GuideListView: View {
                 }
                 .navigationTitle("Toronto")
             }
+            .environment(GuideViewModel())
         }
     }
 }

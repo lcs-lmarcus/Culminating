@@ -36,6 +36,7 @@ struct NewFolderView: View {
                     Divider()
 
                     // — Bottom row: Camera / image picker
+                    // From ChatGpt
                     Button {
                         showingImagePicker = true
                     } label: {
