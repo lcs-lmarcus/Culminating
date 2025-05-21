@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @State var showingNewFolderView = false
+    @EnvironmentObject private var viewModel: GuideViewModel
+    
     let folder: [TourFolder]
     
     var body: some View {
@@ -20,6 +24,21 @@ struct HomeView: View {
                     FolderView(providedFolder: currentFolder)
                 }
             }
+            .navigationTitle("Cities")
+            // Button for adding a new guide / folder
+            .toolbar {
+                ToolbarItem(placement: .automatic) {
+                    Button {
+                        showingNewFolderView = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
+            .sheet(isPresented: $showingNewFolderView) {
+                PlusButtonView()
+                  .environmentObject(viewModel)
+            }
             
         }
     }
@@ -27,4 +46,6 @@ struct HomeView: View {
 
 #Preview {
     HomeView(folder: exampleFolder)
+        .environment(GuideViewModel())
+    
 }

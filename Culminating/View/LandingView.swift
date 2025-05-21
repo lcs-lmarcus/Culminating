@@ -10,12 +10,14 @@ import SwiftUI
 struct LandingView: View {
     // MARK: Stored properties
     @State var currentTab = 0
-    @State var showingNewFolderView = false
-    @EnvironmentObject private var viewModel: GuideViewModel
+    
+    // Search text
+    @State var searchText = ""
     
     // MARK: Computed properties
     
     var body: some View {
+        
         TabView(selection: $currentTab) {
             
             HomeView(folder: exampleFolder)
@@ -38,20 +40,18 @@ struct LandingView: View {
                     }
                 }
                 .tag(2)
-        }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    showingNewFolderView = true
-                } label: {
-                    Image(systemName: "plus")
+            
+            FavouriteView()
+                .tabItem {
+                    Label {
+                        Text("Favourite")
+                    } icon: {
+                        Image(systemName: "star.fill")
+                    }
                 }
-            }
+                .tag(3)
         }
-        .sheet(isPresented: $showingNewFolderView) {
-            NewFolderView()
-              .environmentObject(viewModel)
-        }
+        
     }
 }
 

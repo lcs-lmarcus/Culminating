@@ -63,3 +63,13 @@ final class AddFolderViewModel: ObservableObject {
         }
         
 }
+
+// ChatGPT
+// Explicit button handler
+//private func delete(item: String) {
+//    if let index = items.firstIndex(of: item) {
+//        items.remove(at: index)
+//    }
+//}
+
+

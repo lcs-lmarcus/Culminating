@@ -16,8 +16,9 @@ struct GuideDetailView: View {
         NavigationStack {
             VStack {
                 HStack(alignment: .bottom) {
-                    Text (guideToShow.name)
-                        .padding(.trailing)
+                    Text (guideToShow.folder)
+                    Spacer()
+                        .padding(.horizontal)
                 }
                 .foregroundStyle(.gray)
                 .font(.system(size: 20))
@@ -42,16 +43,13 @@ struct GuideDetailView: View {
                 }
                 Spacer()
                 
-                //                // Delete Button
-                //                Button(role: .destructive) {
-                //                    if let idx = viewModel.guides.firstIndex(where: { $0.id == guideToShow.id } {
-                //                        viewModel.deleteGuides(at: IndexSet(integer: idx))
-                //                        dismiss()
-                //                    }
-                //                } label: {
-                //                    Label("Delete Guide", systemImage: "trash")
-                //                }
-                //                .padding()
+//                Button(action: {
+//                    delete(item: item)
+//                }) {
+//                    Image(systemName: "trash")
+//                        .foregroundColor(.red)
+//                }
+//                .buttonStyle(BorderlessButtonStyle())
                 
                     .navigationTitle(guideToShow.name)
             }
