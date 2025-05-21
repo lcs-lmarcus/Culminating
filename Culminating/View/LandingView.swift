@@ -10,6 +10,7 @@ import SwiftUI
 struct LandingView: View {
     // MARK: Stored properties
     @State var currentTab = 0
+    @State var showingNewFolderView = false
     
     // MARK: Computed properties
     
@@ -32,6 +33,20 @@ struct LandingView: View {
                         Text ("New Folder")
                     } icon: {
                         Image(systemName: "folder.fill.badge.plus")
+                    }
+                }
+                .toolbar {
+                    ToolbarItem (placement: .navigationBarLeading) {
+                        
+                            Button {
+                                showingNewFolderView = true
+                            
+                        } label: {
+                            Image(systemName: "plus")
+                        }
+                        .navigationDestination(isPresented: $showingNewFolderView) {
+                                        NewFolderView()
+                                    }
                     }
                 }
         }

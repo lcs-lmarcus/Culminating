@@ -40,3 +40,26 @@ class GuideViewModel: ObservableObject {
     
 
 }
+
+final class AddFolderViewModel: ObservableObject {
+    // MARK: – Published data
+    @Published var folders: [String] = []
+    @Published var guides: [TourGuide] = []
+    
+    // Optional: preload some folders/guides
+    init() {
+        folders = ["Toronto", "Vancouver", "Hong Kong"]
+        guides  = exampleTourGuide
+    }
+        
+        // Add a new guide
+        func addGuide(_ guide: TourGuide) {
+            guides.append(guide)
+        }
+        
+        /// Delete guides at the given offsets
+        func deleteGuides(at offsets: IndexSet) {
+            guides.remove(atOffsets: offsets)
+        }
+        
+}

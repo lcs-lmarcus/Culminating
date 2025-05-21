@@ -6,6 +6,4 @@
 //
 import Foundation
 
-@Observable @MainActor
-class
 
