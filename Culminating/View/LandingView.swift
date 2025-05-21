@@ -11,6 +11,7 @@ struct LandingView: View {
     // MARK: Stored properties
     @State var currentTab = 0
     @State var showingNewFolderView = false
+    @EnvironmentObject private var viewModel: GuideViewModel
     
     // MARK: Computed properties
     
@@ -27,28 +28,29 @@ struct LandingView: View {
                     
                 }
                 .tag(1)
-            NewFolderView()
+            
+            HistoryView()
                 .tabItem {
                     Label {
-                        Text ("New Folder")
+                        Text("History")
                     } icon: {
-                        Image(systemName: "folder.fill.badge.plus")
+                        Image(systemName: "clock.arrow.trianglehead.counterclockwise.rotate.90")
                     }
                 }
-                .toolbar {
-                    ToolbarItem (placement: .navigationBarLeading) {
-                        
-                            Button {
-                                showingNewFolderView = true
-                            
-                        } label: {
-                            Image(systemName: "plus")
-                        }
-                        .navigationDestination(isPresented: $showingNewFolderView) {
-                                        NewFolderView()
-                                    }
-                    }
+                .tag(2)
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    showingNewFolderView = true
+                } label: {
+                    Image(systemName: "plus")
                 }
+            }
+        }
+        .sheet(isPresented: $showingNewFolderView) {
+            NewFolderView()
+              .environmentObject(viewModel)
         }
     }
 }
