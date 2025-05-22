@@ -37,10 +37,11 @@ struct HomeView: View {
             }
             .sheet(isPresented: $showingNewFolderView) {
                 PlusButtonView()
+                    .presentationDetents([.fraction(0.2), .medium])
                   .environmentObject(viewModel)
             }
             
-        }
+                                          }
     }
 }
 

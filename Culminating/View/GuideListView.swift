@@ -20,9 +20,9 @@ struct GuideListView: View {
                 } label: {
                     GuideView(providedGuide: currentGuide)
                 }
-                .navigationTitle("Toronto")
             }
             .environment(GuideViewModel())
+            .navigationTitle("Toronto")
         }
     }
 }

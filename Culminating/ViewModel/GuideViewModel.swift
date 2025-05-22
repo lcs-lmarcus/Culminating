@@ -38,8 +38,13 @@ class GuideViewModel: ObservableObject {
 //        }
 //    )
     
+//    func delete(_ guide: TourGuide) {
+//        guard let idx = TourGuide.firstIndex(of: guide) else { return }
+//        let removed = TourGuide.remove(at: idx)
+//    //    history.append(removed)
+    }
 
-}
+
 
 final class AddFolderViewModel: ObservableObject {
     // MARK: – Published data
@@ -63,6 +68,8 @@ final class AddFolderViewModel: ObservableObject {
         }
         
 }
+
+
 
 // ChatGPT
 // Explicit button handler

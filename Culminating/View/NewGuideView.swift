@@ -9,8 +9,8 @@ import SwiftUI
 
 struct NewGuideView: View {
     // MARK: Stored properties
-    @EnvironmentObject private var viewModel: GuideViewModel
-    @Environment(\.dismiss) private var dismiss
+    @Environment(NewViewModel.self) var viewModel
+  
     
     @State var guideName = ""
     @State var date = Date ()
@@ -20,6 +20,18 @@ struct NewGuideView: View {
     @State private var folderImage: Image? = nil
     @State private var showingImagePicker = false
     @State private var inputUIImage: UIImage? = nil
+    
+    @State  var GuideName: String = ""
+    @State  var GuideDate: String = ""
+    @State  var GuideAdress: String = ""
+    @State  var GuideImage: String = ""
+    @State  var GuideCaption: String = ""
+    @State  var GuideFolder: String = ""
+    @State  var GuideRating: Double = 0.0
+    
+    
+    
+   
     
     
     
@@ -33,14 +45,17 @@ struct NewGuideView: View {
                     .padding(.horizontal)
                 
                 // Textfields
-                VStack {
+                VStack (spacing: 0){
                     TextField("Name", text: $guideName)
                         .padding(.horizontal)
                         .frame(height: 44)
                         .background(Color(.systemGray5))
+                    Divider()
                     
                     // From ChatGPT
+                        
                     DatePicker("Date", selection: $date, displayedComponents: .date)
+                        .foregroundStyle(Color.gray)
                         .padding(.horizontal)
                         .frame(height: 44)
                         .background(Color(.systemGray5))
@@ -112,10 +127,24 @@ struct NewGuideView: View {
                         }
                     }
             }
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") {
+                        withAnimation {
+                            //  ➝ Your save logic here
+                            viewModel.add(newGuide: TourGuide(name: GuideName, date: GuideDate, address: GuideAdress, folder: GuideFolder, image: GuideImage, rating: GuideRating, caption: GuideCaption))
+                            
+                        }
+                    }
+//                    .disabled(folderName.trimmingCharacters(in: .whitespaces).isEmpty)
+                }
+            }
         }
     }
 }
 
 #Preview {
     NewGuideView()
+        .environment(NewViewModel())
+
 }

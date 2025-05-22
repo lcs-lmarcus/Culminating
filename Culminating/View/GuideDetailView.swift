@@ -17,8 +17,8 @@ struct GuideDetailView: View {
             VStack {
                 HStack(alignment: .bottom) {
                     Text (guideToShow.folder)
-                    Spacer()
                         .padding(.horizontal)
+                        Spacer()
                 }
                 .foregroundStyle(.gray)
                 .font(.system(size: 20))
@@ -43,18 +43,9 @@ struct GuideDetailView: View {
                 }
                 Spacer()
                 
-//                Button(action: {
-//                    delete(item: item)
-//                }) {
-//                    Image(systemName: "trash")
-//                        .foregroundColor(.red)
-//                }
-//                .buttonStyle(BorderlessButtonStyle())
-                
-                    .navigationTitle(guideToShow.name)
             }
+            .navigationTitle(guideToShow.name)
         }
-        
     }
 }
 
