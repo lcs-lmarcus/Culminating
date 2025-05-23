@@ -14,8 +14,12 @@ struct CityDetailView: View {
     
     // MARK: Computed properties
     var body: some View {
-        List(city.attractions) { attraction in
-            Text(attraction.name)
+        List(city.attractions) { currentAttraction in
+            NavigationLink {
+                AttractionDetailView(attraction: currentAttraction)
+            } label : {
+                Text(currentAttraction.name)
+            }
         }
         .navigationTitle(city.name)
     }

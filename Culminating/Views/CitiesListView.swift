@@ -22,6 +22,7 @@ struct CitiesListView: View {
                 }
 
             }
+            
             .navigationTitle("Tour Guide")
         }
     }

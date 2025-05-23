@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE64A2ED2DE10CA400854B9A /* AttractionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE64A2EC2DE10CA400854B9A /* AttractionDetailView.swift */; };
 		AE8804972DE0AC8B00C132D2 /* FavouriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8804852DE0AC8B00C132D2 /* FavouriteView.swift */; };
 		AE8804982DE0AC8B00C132D2 /* FolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8804862DE0AC8B00C132D2 /* FolderView.swift */; };
 		AE8804992DE0AC8B00C132D2 /* GuideDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8804872DE0AC8B00C132D2 /* GuideDetailView.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		AE3C74AC2DB5932300412F0B /* Culminating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Culminating.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE64A2EC2DE10CA400854B9A /* AttractionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionDetailView.swift; sourceTree = "<group>"; };
 		AE8804832DE0AC8B00C132D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AE8804852DE0AC8B00C132D2 /* FavouriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteView.swift; sourceTree = "<group>"; };
 		AE8804862DE0AC8B00C132D2 /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				AE8804902DE0AC8B00C132D2 /* PlusButtonView.swift */,
 				AE8804D42DE0B67500C132D2 /* CitiesListView.swift */,
 				AE8804D62DE0B80400C132D2 /* CityDetailView.swift */,
+				AE64A2EC2DE10CA400854B9A /* AttractionDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				AE88049A2DE0AC8B00C132D2 /* GuideListView.swift in Sources */,
 				AE8804AA2DE0ACBD00C132D2 /* Attraction.swift in Sources */,
 				AE88049B2DE0AC8B00C132D2 /* GuideView.swift in Sources */,
+				AE64A2ED2DE10CA400854B9A /* AttractionDetailView.swift in Sources */,
 				AE88049C2DE0AC8B00C132D2 /* HistoryView.swift in Sources */,
 				AE8804D52DE0B67500C132D2 /* CitiesListView.swift in Sources */,
 				AE8804D72DE0B80400C132D2 /* CityDetailView.swift in Sources */,
