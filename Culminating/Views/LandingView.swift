@@ -20,16 +20,16 @@ struct LandingView: View {
         
         TabView(selection: $currentTab) {
             
-            HomeView(folder: exampleFolder)
-                .tabItem {
-                    Label {
-                        Text("Home")
-                    } icon: {
-                        Image(systemName: "house.fill")
-                    }
-                    
-                }
-                .tag(1)
+//            HomeView(folder: exampleFolder)
+//                .tabItem {
+//                    Label {
+//                        Text("Home")
+//                    } icon: {
+//                        Image(systemName: "house.fill")
+//                    }
+//                    
+//                }
+//                .tag(1)
             
             HistoryView()
                 .tabItem {
