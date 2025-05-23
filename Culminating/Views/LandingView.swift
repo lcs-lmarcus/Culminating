@@ -57,5 +57,4 @@ struct LandingView: View {
 
 #Preview {
     LandingView()
-        .environmentObject( GuideViewModel() )
 }

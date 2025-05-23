@@ -120,12 +120,12 @@
 		AE8804962DE0AC8B00C132D2 /* Culminating */ = {
 			isa = PBXGroup;
 			children = (
+				AE8804952DE0AC8B00C132D2 /* CulminatingApp.swift */,
 				AE8804822DE0AC8B00C132D2 /* Model */,
 				AE8804932DE0AC8B00C132D2 /* ViewModels */,
 				AE8804912DE0AC8B00C132D2 /* Views */,
 				AE8804842DE0AC8B00C132D2 /* Preview Content */,
 				AE8804942DE0AC8B00C132D2 /* Assets.xcassets */,
-				AE8804952DE0AC8B00C132D2 /* CulminatingApp.swift */,
 			);
 			path = Culminating;
 			sourceTree = "<group>";
