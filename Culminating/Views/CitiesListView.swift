@@ -14,8 +14,13 @@ struct CitiesListView: View {
     // MARK: Computed properties
     var body: some View {
         NavigationStack {
-            List(sampleCities) { city in
-                Text(city.name)
+            List(sampleCities) { currentCity in
+                NavigationLink {
+                    CityDetailView(city: currentCity)
+                } label: {
+                    Text(currentCity.name)
+                }
+
             }
             .navigationTitle("Tour Guide")
         }
