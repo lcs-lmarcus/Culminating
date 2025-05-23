@@ -20,26 +20,26 @@ struct LandingView: View {
         
         TabView(selection: $currentTab) {
             
-//            HomeView(folder: exampleFolder)
-//                .tabItem {
-//                    Label {
-//                        Text("Home")
-//                    } icon: {
-//                        Image(systemName: "house.fill")
-//                    }
-//                    
-//                }
-//                .tag(1)
-            
-            HistoryView()
+            CitiesListView()
                 .tabItem {
                     Label {
-                        Text("History")
+                        Text("Home")
                     } icon: {
-                        Image(systemName: "clock.arrow.trianglehead.counterclockwise.rotate.90")
+                        Image(systemName: "house.fill")
                     }
+                    
                 }
-                .tag(2)
+                .tag(1)
+            
+//            HistoryView()
+//                .tabItem {
+//                    Label {
+//                        Text("History")
+//                    } icon: {
+//                        Image(systemName: "clock.arrow.trianglehead.counterclockwise.rotate.90")
+//                    }
+//                }
+//                .tag(2)
             
             FavouriteView()
                 .tabItem {

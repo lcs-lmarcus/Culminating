@@ -5,51 +5,49 @@
 //  Created by Marcus Li on 2025-04-21.
 //
 
-import SwiftUI
-
+//import SwiftUI
+//
 //struct GuideDetailView: View {
-//    @Environment(GuideViewModel.self)     var viewModel
-//    @Environment(\.dismiss) private var dismiss
+//// Getting datas from viewModel
+//    @State var viewModel = GuideViewModel()
+//
 //    
-//    let guideToShow : TourGuide
+//    let attractionToShow : Attraction
 //    var body: some View {
 //        NavigationStack {
 //            VStack {
-//                HStack(alignment: .bottom) {
-//                    Text (guideToShow.folder)
-//                        .padding(.horizontal)
-//                        Spacer()
-//                }
-//                .foregroundStyle(.gray)
-//                .font(.system(size: 20))
-//                Spacer()
+////                HStack(alignment: .bottom) {
+////                    Text (attractionToShow.name)
+////                        .padding(.horizontal)
+////                        Spacer()
+////                }
+////                .foregroundStyle(.gray)
+////                .font(.system(size: 20))
+////                Spacer()
 //                
 //                HStack {
-//                    Image (guideToShow.image)
-//                        .resizable()
-//                        .frame(width: 180, height: 250)
-//                        .padding(.trailing)
+////                    Image (attractionToShow.image)
+////                        .resizable()
+////                        .frame(width: 180, height: 250)
+////                        .padding(.trailing)
 //                    VStack {
-//                        Text ("Date")
-//                        Text (guideToShow.date)
-//                            .padding(.bottom)
+////                        Text ("Date")
+////                        Text (attractionToShow.date)
+////                            .padding(.bottom)
 //                        Text ("Address")
-//                        Text (guideToShow.address)
+//                        Text (attractionToShow.address)
 //                            .padding(.bottom)
-//                        Text ("Folder")
-//                        Text (guideToShow.folder)
-//                        
 //                    }
 //                }
 //                Spacer()
 //                
 //            }
-//            .navigationTitle(guideToShow.name)
+//            .navigationTitle(attractionToShow.name)
 //        }
 //    }
 //}
 //
 //#Preview {
-//    GuideDetailView(guideToShow: exampleTourGuide[0])
-//        .environment(GuideViewModel())
+//    GuideDetailView
+//        
 //}

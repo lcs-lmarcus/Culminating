@@ -24,6 +24,7 @@
 		AE8804A62DE0AC8B00C132D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE8804942DE0AC8B00C132D2 /* Assets.xcassets */; };
 		AE8804A82DE0ACB200C132D2 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8804A72DE0ACB200C132D2 /* City.swift */; };
 		AE8804AA2DE0ACBD00C132D2 /* Attraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8804A92DE0ACBA00C132D2 /* Attraction.swift */; };
+		AE8804D52DE0B67500C132D2 /* CitiesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8804D42DE0B67500C132D2 /* CitiesListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		AE8804952DE0AC8B00C132D2 /* CulminatingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CulminatingApp.swift; sourceTree = "<group>"; };
 		AE8804A72DE0ACB200C132D2 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		AE8804A92DE0ACBA00C132D2 /* Attraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attraction.swift; sourceTree = "<group>"; };
+		AE8804D42DE0B67500C132D2 /* CitiesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				AE88048D2DE0AC8B00C132D2 /* NewFolderView.swift */,
 				AE88048E2DE0AC8B00C132D2 /* NewGuideView.swift */,
 				AE8804902DE0AC8B00C132D2 /* PlusButtonView.swift */,
+				AE8804D42DE0B67500C132D2 /* CitiesListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				AE8804AA2DE0ACBD00C132D2 /* Attraction.swift in Sources */,
 				AE88049B2DE0AC8B00C132D2 /* GuideView.swift in Sources */,
 				AE88049C2DE0AC8B00C132D2 /* HistoryView.swift in Sources */,
+				AE8804D52DE0B67500C132D2 /* CitiesListView.swift in Sources */,
 				AE88049D2DE0AC8B00C132D2 /* HomeView.swift in Sources */,
 				AE88049E2DE0AC8B00C132D2 /* LandingView.swift in Sources */,
 				AE88049F2DE0AC8B00C132D2 /* NewFolderView.swift in Sources */,
