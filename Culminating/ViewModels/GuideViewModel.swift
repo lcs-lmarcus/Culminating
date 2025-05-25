@@ -7,4 +7,17 @@
 
 import Foundation
 
-
+class GuideViewModel: Observable {
+    // MARK: Stored properties
+    // Defaulting array
+    @Published var attraction: [Attraction] = []
+    
+    // MARK: Computed properties
+    
+    
+    // MARK: Functions
+    func add(newAttraction: Attraction) {
+        self.attraction.append(newAttraction)
+    }
+    
+}

@@ -18,7 +18,7 @@
 		AE88049E2DE0AC8B00C132D2 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88048C2DE0AC8B00C132D2 /* LandingView.swift */; };
 		AE88049F2DE0AC8B00C132D2 /* NewFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88048D2DE0AC8B00C132D2 /* NewFolderView.swift */; };
 		AE8804A02DE0AC8B00C132D2 /* NewGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88048E2DE0AC8B00C132D2 /* NewGuideView.swift */; };
-		AE8804A22DE0AC8B00C132D2 /* PlusButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8804902DE0AC8B00C132D2 /* PlusButtonView.swift */; };
+		AE8804A22DE0AC8B00C132D2 /* NewButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8804902DE0AC8B00C132D2 /* NewButtonView.swift */; };
 		AE8804A32DE0AC8B00C132D2 /* GuideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8804922DE0AC8B00C132D2 /* GuideViewModel.swift */; };
 		AE8804A42DE0AC8B00C132D2 /* CulminatingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8804952DE0AC8B00C132D2 /* CulminatingApp.swift */; };
 		AE8804A52DE0AC8B00C132D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE8804832DE0AC8B00C132D2 /* Preview Assets.xcassets */; };
@@ -43,7 +43,7 @@
 		AE88048C2DE0AC8B00C132D2 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		AE88048D2DE0AC8B00C132D2 /* NewFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFolderView.swift; sourceTree = "<group>"; };
 		AE88048E2DE0AC8B00C132D2 /* NewGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGuideView.swift; sourceTree = "<group>"; };
-		AE8804902DE0AC8B00C132D2 /* PlusButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButtonView.swift; sourceTree = "<group>"; };
+		AE8804902DE0AC8B00C132D2 /* NewButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewButtonView.swift; sourceTree = "<group>"; };
 		AE8804922DE0AC8B00C132D2 /* GuideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewModel.swift; sourceTree = "<group>"; };
 		AE8804942DE0AC8B00C132D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE8804952DE0AC8B00C132D2 /* CulminatingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CulminatingApp.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 				AE88048C2DE0AC8B00C132D2 /* LandingView.swift */,
 				AE88048D2DE0AC8B00C132D2 /* NewFolderView.swift */,
 				AE88048E2DE0AC8B00C132D2 /* NewGuideView.swift */,
-				AE8804902DE0AC8B00C132D2 /* PlusButtonView.swift */,
+				AE8804902DE0AC8B00C132D2 /* NewButtonView.swift */,
 				AE8804D42DE0B67500C132D2 /* CitiesListView.swift */,
 				AE8804D62DE0B80400C132D2 /* CityDetailView.swift */,
 				AE64A2EC2DE10CA400854B9A /* AttractionDetailView.swift */,
@@ -227,7 +227,7 @@
 				AE88049F2DE0AC8B00C132D2 /* NewFolderView.swift in Sources */,
 				AE8804A02DE0AC8B00C132D2 /* NewGuideView.swift in Sources */,
 				AE8804A82DE0ACB200C132D2 /* City.swift in Sources */,
-				AE8804A22DE0AC8B00C132D2 /* PlusButtonView.swift in Sources */,
+				AE8804A22DE0AC8B00C132D2 /* NewButtonView.swift in Sources */,
 				AE8804A32DE0AC8B00C132D2 /* GuideViewModel.swift in Sources */,
 				AE8804A42DE0AC8B00C132D2 /* CulminatingApp.swift in Sources */,
 			);
