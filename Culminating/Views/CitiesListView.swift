@@ -27,21 +27,21 @@ struct CitiesListView: View {
                 }
                 
             }
-//            //             Button for adding a new guide / folder
-//            .toolbar {
-//                ToolbarItem(placement: .automatic) {
-//                    Button {
-//                        showingNewFolderView = true
-//                    } label: {
-//                        Image(systemName: "plus")
-//                    }
-//                }
-//            }
-//            .sheet(isPresented: $showingNewFolderView) {
-//                NewButtonView()
+            //             Button for adding a new guide / folder
+            .toolbar {
+                ToolbarItem(placement: .automatic) {
+                    Button {
+                        showingNewFolderView = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
+            .sheet(isPresented: $showingNewFolderView) {
+                NewAttractionView()
 //                    .presentationDetents([.fraction(0.4), .medium])
-//                //                              .environmentObject(viewModel)
-//            }
+                //                              .environmentObject(viewModel)
+            }
             .navigationTitle("Tour Guide")
         }
     }

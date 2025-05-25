@@ -1,5 +1,5 @@
 //
-//  NewFolderView.swift
+//  NewAttractionView.swift
 //  Culminating
 //
 //  Created by Marcus Li on 2025-05-20.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewFolderView: View {
+struct NewAttractionView: View {
     @Environment(\.dismiss) private var dismiss
 
     // MARK: – Form state
@@ -20,7 +20,7 @@ struct NewFolderView: View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 16) {
                 // 1) Section label
-                Text("Folder Detail")
+                Text("City Detail")
                     .font(.subheadline.weight(.medium))
                     .foregroundColor(.gray)
                     .padding(.horizontal)
@@ -64,7 +64,7 @@ struct NewFolderView: View {
 
                 Spacer()
             }
-            .navigationTitle("Add Folder")
+            .navigationTitle("Add City")
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") {
@@ -121,5 +121,5 @@ struct ImagePicker: UIViewControllerRepresentable {
 
 
 #Preview {
-    NewFolderView()
+    NewAttractionView()
 }
