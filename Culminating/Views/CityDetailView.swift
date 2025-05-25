@@ -18,7 +18,6 @@ struct CityDetailView: View {
         List(city.attractions) { currentAttraction in
             NavigationLink {
                 AttractionDetailView(attraction: currentAttraction)
-                Text(currentAttraction.name)
             } label : {
                 Text(currentAttraction.name)
             }
