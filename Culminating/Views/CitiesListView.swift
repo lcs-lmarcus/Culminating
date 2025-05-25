@@ -10,34 +10,38 @@ import SwiftUI
 struct CitiesListView: View {
     
     // MARK: Stored properties
+    
+    @State var viewModel = CitiesListViewModel(cities: sampleCities)
+    
+    
     @State var showingNewFolderView = false
     
     // MARK: Computed properties
     var body: some View {
         NavigationStack {
-            List(sampleCities) { currentCity in
+            List(viewModel.cities) { currentCity in
                 NavigationLink {
                     CityDetailView(city: currentCity)
                 } label: {
                     Text(currentCity.name)
                 }
-
+                
             }
-//             Button for adding a new guide / folder
-                        .toolbar {
-                            ToolbarItem(placement: .automatic) {
-                                Button {
-                                    showingNewFolderView = true
-                                } label: {
-                                    Image(systemName: "plus")
-                                }
-                            }
-                        }
-                        .sheet(isPresented: $showingNewFolderView) {
-                            NewButtonView()
-                                .presentationDetents([.fraction(0.2), .medium])
-//                              .environmentObject(viewModel)
-                        }
+//            //             Button for adding a new guide / folder
+//            .toolbar {
+//                ToolbarItem(placement: .automatic) {
+//                    Button {
+//                        showingNewFolderView = true
+//                    } label: {
+//                        Image(systemName: "plus")
+//                    }
+//                }
+//            }
+//            .sheet(isPresented: $showingNewFolderView) {
+//                NewButtonView()
+//                    .presentationDetents([.fraction(0.4), .medium])
+//                //                              .environmentObject(viewModel)
+//            }
             .navigationTitle("Tour Guide")
         }
     }

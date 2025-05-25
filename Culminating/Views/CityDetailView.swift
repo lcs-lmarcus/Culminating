@@ -16,7 +16,8 @@ struct CityDetailView: View {
     var body: some View {
         List(city.attractions) { currentAttraction in
             NavigationLink {
-                AttractionDetailView(attraction: currentAttraction)
+//                AttractionDetailView(attraction: currentAttraction)
+                Text(currentAttraction.name)
             } label : {
                 Text(currentAttraction.name)
             }
