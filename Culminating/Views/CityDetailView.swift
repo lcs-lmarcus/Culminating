@@ -11,18 +11,34 @@ struct CityDetailView: View {
     
     // MARK: Stored properties
     let city: City
+    @State var showingNewAttractionView = false
     
     // MARK: Computed properties
     var body: some View {
         List(city.attractions) { currentAttraction in
             NavigationLink {
-//                AttractionDetailView(attraction: currentAttraction)
+                AttractionDetailView(attraction: currentAttraction)
                 Text(currentAttraction.name)
             } label : {
                 Text(currentAttraction.name)
             }
         }
         .navigationTitle(city.name)
+        //             Button for adding a new guide
+        .toolbar {
+            ToolbarItem(placement: .automatic) {
+                Button {
+                    showingNewAttractionView = true
+                } label: {
+                    Image(systemName: "plus")
+                }
+            }
+        }
+        .sheet(isPresented: $showingNewAttractionView) {
+            NewGuideView()
+//                    .presentationDetents([.fraction(0.4), .medium])
+            //                              .environmentObject(viewModel)
+        }
     }
 }
 

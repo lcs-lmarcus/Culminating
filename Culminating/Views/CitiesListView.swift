@@ -11,6 +11,8 @@ struct CitiesListView: View {
     
     // MARK: Stored properties
     
+    // Creates an instance of the Cities view model
+    // (THE SOURCE OF TRUTH FOR DATA IN THIS APP)
     @State var viewModel = CitiesListViewModel(cities: sampleCities)
     
     
@@ -38,7 +40,8 @@ struct CitiesListView: View {
                 }
             }
             .sheet(isPresented: $showingNewFolderView) {
-                NewAttractionView()
+                NewCityView()
+                    .environment(viewModel)
 //                    .presentationDetents([.fraction(0.4), .medium])
                 //                              .environmentObject(viewModel)
             }

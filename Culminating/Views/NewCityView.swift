@@ -7,12 +7,15 @@
 
 import SwiftUI
 
-struct NewAttractionView: View {
+struct NewCityView: View {
     @Environment(\.dismiss) private var dismiss
+    
+    // Get a reference to the view model
+    @Environment(CitiesListViewModel.self) var viewModel
 
     // MARK: – Form state
-    @State private var folderName: String = ""
-    @State private var folderImage: Image? = nil
+    @State private var cityName: String = ""
+    @State private var cityImage: Image? = nil
     @State private var showingImagePicker = false
     @State private var inputUIImage: UIImage? = nil
 
@@ -28,7 +31,7 @@ struct NewAttractionView: View {
                 // 2) Card container
                 VStack(spacing: 0) {
                     // — Top row: Name field
-                    TextField("Name", text: $folderName)
+                    TextField("Name", text: $cityName)
                         .padding(.horizontal)
                         .frame(height: 44)
                         .background(Color(.systemGray5))
@@ -37,10 +40,11 @@ struct NewAttractionView: View {
 
                     // — Bottom row: Camera / image picker
                     // From ChatGpt
+                    // ADD URL
                     Button {
                         showingImagePicker = true
                     } label: {
-                        if let folderImage = folderImage {
+                        if let folderImage = cityImage {
                             folderImage
                                 .resizable()
                                 .scaledToFill()
@@ -69,9 +73,12 @@ struct NewAttractionView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") {
                         //  ➝ Your save logic here
+                        viewModel.add(newCity: City(name: cityName, latitude: 0.0, longitude: 0.0, attractions: []))
+                        
+                        // dismiss the sheet
                         dismiss()
                     }
-                    .disabled(folderName.trimmingCharacters(in: .whitespaces).isEmpty)
+                    .disabled(cityName.trimmingCharacters(in: .whitespaces).isEmpty)
                 }
             }
             // MARK: – Image picker sheet
@@ -79,7 +86,7 @@ struct NewAttractionView: View {
                 ImagePicker(image: $inputUIImage)
                     .onChange(of: inputUIImage) { newImage in
                         if let ui = newImage {
-                            folderImage = Image(uiImage: ui)
+                            cityImage = Image(uiImage: ui)
                         }
                     }
             }
@@ -121,5 +128,6 @@ struct ImagePicker: UIViewControllerRepresentable {
 
 
 #Preview {
-    NewAttractionView()
+    NewCityView()
+        .environment(CitiesListViewModel())
 }

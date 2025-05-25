@@ -19,14 +19,22 @@ class CitiesListViewModel: Observable {
         self.cities = cities
     }
     
+//    @Published var attractions: [Attraction] = sampleAttractions
+    
+    
     // MARK: Computed properties
     
     // MARK: Functions
     func add(newCity: City) {
         self.cities.append(newCity)
     }
+    
+//    func addAttraction(newAttraction: Attraction) {
+//        self.attractions.append(newAttraction)
+//    }
 //    func delete(deleteAttraction: Attraction) {
 //        Attraction.removeAll { $0.id == Attraction.id }
 //      }
     
 }
+
