@@ -1,5 +1,5 @@
 //
-//  NewGuideView.swift
+//  NewAttractionView.swift
 //  Culminating
 //
 //  Created by Marcus Li on 2025-05-20.
@@ -7,46 +7,35 @@
 
 import SwiftUI
 
-struct NewGuideView: View {
+struct NewAttractionView: View {
     // MARK: Stored properties
-    @State var viewModel = CitiesListViewModel()
-  
+    @Binding var city: City
     
-    @State var guideName = ""
+    @State var name = ""
     @State var date = Date ()
     @State var address = ""
     @State var rating = Int()
     @State var caption = ""
+    @State var isFavourite = false
     @State private var folderImage: Image? = nil
     @State private var showingImagePicker = false
     @State private var inputUIImage: UIImage? = nil
     
-    @State  var AttractionName: String = ""
-    @State  var AttractionLatitude: Double = 0.0
-    @State  var AttractionAddress: String = ""
-    @State  var AttractionLongitude: Double = 0.0
-    @State  var AttractionDescription: String = ""
-    @State  var AttractionRating: Int = 0
-    @State  var AttractionFavourite: Bool = false
     
-    
-    
-   
-    
-    
+    @Binding var isShowing: Bool
     
     var body: some View {
         NavigationStack {
             VStack (alignment: .leading, spacing: 16){
                 // Label
-                Text ("Guide Detail")
+                Text ("Attraction Detail")
                     .font(.subheadline.weight(.medium))
                     .foregroundColor(.gray)
                     .padding(.horizontal)
                 
                 // Textfields
                 VStack (spacing: 0){
-                    TextField("Name", text: $guideName)
+                    TextField("Name", text: $name)
                         .padding(.horizontal)
                         .frame(height: 44)
                         .background(Color(.systemGray5))
@@ -115,7 +104,7 @@ struct NewGuideView: View {
                 
                 
                 
-                .navigationTitle("Add Guide")
+                .navigationTitle("Add Attraction")
             }
             
             // MARK: – Image picker sheet
@@ -131,8 +120,22 @@ struct NewGuideView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") {
                         withAnimation {
+                            city.attractions.append(
+                                Attraction(
+                                    id: UUID(),
+                                    name: name,
+                                    address: address,
+                                    latitude: 0.0,
+                                    longitude: 0.0,
+                                    rating: 0,
+                                    description: caption,
+                                    isFavourite: isFavourite
+                                )
+                            )
+                            isShowing = false
+                            
                             //  ➝ Your save logic here
-                            viewModel.addAttraction(newAttraction: Attraction( id: UUID(), name: AttractionName, address: AttractionAddress, latitude: AttractionLatitude, longitude: AttractionLongitude, rating: AttractionRating, description: AttractionDescription, isFavourite: AttractionFavourite))
+//                            viewModel.addAttraction(newAttraction: Attraction( id: UUID(), name: AttractionName, address: AttractionAddress, latitude: AttractionLatitude, longitude: AttractionLongitude, rating: AttractionRating, description: AttractionDescription, isFavourite: AttractionFavourite))
                             
                             
                         }
@@ -145,7 +148,7 @@ struct NewGuideView: View {
 }
 
 #Preview {
-    NewGuideView()
+    NewAttractionView(city: .constant(sampleCities.first!), isShowing: .constant(true))
 //        .environment(GuideViewModel())
 
 }

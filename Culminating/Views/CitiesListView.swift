@@ -20,10 +20,12 @@ struct CitiesListView: View {
     
     // MARK: Computed properties
     var body: some View {
+        @Bindable var viewModelBindable = viewModel
+        
         NavigationStack {
-            List(viewModel.cities) { currentCity in
+            List($viewModel.cities) { $currentCity in
                 NavigationLink {
-                    CityDetailView(city: currentCity)
+                    CityDetailView(city: $currentCity)
                 } label: {
                     Text(currentCity.name)
                 }

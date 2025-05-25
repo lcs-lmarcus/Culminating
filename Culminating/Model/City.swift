@@ -11,7 +11,7 @@ struct City: Identifiable {
     let name : String
     let latitude: Double
     let longitude: Double
-    let attractions: [Attraction]
+    var attractions: [Attraction]
 //    let image: String
 }
 
