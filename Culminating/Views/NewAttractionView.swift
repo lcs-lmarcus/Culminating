@@ -129,7 +129,8 @@ struct NewAttractionView: View {
                                     longitude: 0.0,
                                     rating: 0,
                                     description: caption,
-                                    isFavourite: isFavourite
+                                    isFavourite: isFavourite,
+                                    photo: inputUIImage
                                 )
                             )
                             isShowing = false

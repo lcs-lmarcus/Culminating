@@ -16,12 +16,23 @@ struct AttractionDetailView: View {
     var body: some View {
         VStack (alignment: .leading) {
             HStack {
-                Text(attraction.address)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                    .padding(.bottom)
-                
-                Spacer()
+                // From CHATGPT
+                if let ui = attraction.photo {
+                    Image(uiImage: ui)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxHeight: 250)
+                        .cornerRadius(8)
+                        .padding()
+                }
+                HStack {
+                    Text(attraction.address)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                        .padding(.bottom)
+                    
+                    Spacer()
+                }
             }
 
             // From ChatGpt
@@ -35,16 +46,6 @@ struct AttractionDetailView: View {
             
             
             Spacer()
-//                .toolbar {
-//                    ToolbarItem(placement: .navigationBarTrailing) {
-//                        Button(role: .destructive) {
-//                            viewModel.delete(attraction)
-//                            dismiss()
-//                        } label: {
-//                            Image(systemName: "trash")
-//                        }
-//                    }
-//                }
         }
         .padding()
         .navigationTitle(attraction.name)

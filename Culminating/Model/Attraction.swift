@@ -5,7 +5,9 @@
 //  Created by Marcus Li on 2025-05-23.
 //
 
+import UIKit
 import Foundation
+
 struct Attraction: Identifiable {
     let id: UUID
     let name: String
@@ -15,6 +17,7 @@ struct Attraction: Identifiable {
     let rating: Int
     let description: String
     let isFavourite: Bool
+    var photo: UIImage? = nil
 }
 // Created sample data from ChatGPT
 let sampleAttractions: [Attraction] = [

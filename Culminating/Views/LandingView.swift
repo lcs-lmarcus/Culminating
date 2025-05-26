@@ -17,29 +17,28 @@ struct LandingView: View {
     // MARK: Computed properties
     
     var body: some View {
-        
         TabView(selection: $currentTab) {
             
             CitiesListView()
-                .tabItem {
-                    Label {
-                        Text("Home")
-                    } icon: {
-                        Image(systemName: "house.fill")
-                    }
-                    
-                }
-                .tag(1)
+//                .tabItem {
+//                    Label {
+//                        Text("Home")
+//                    } icon: {
+//                        Image(systemName: "house.fill")
+//                    }
+//                    
+//                }
+//                .tag(1)
             
-            HistoryView()
-                .tabItem {
-                    Label {
-                        Text("History")
-                    } icon: {
-                        Image(systemName: "clock.arrow.trianglehead.counterclockwise.rotate.90")
-                    }
-                }
-                .tag(2)
+//            HistoryView()
+//                .tabItem {
+//                    Label {
+//                        Text("History")
+//                    } icon: {
+//                        Image(systemName: "clock.arrow.trianglehead.counterclockwise.rotate.90")
+//                    }
+//                }
+//                .tag(2)
             
 //            FavouriteView()
 //                .tabItem {

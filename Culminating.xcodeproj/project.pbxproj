@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		AE64A2ED2DE10CA400854B9A /* AttractionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE64A2EC2DE10CA400854B9A /* AttractionDetailView.swift */; };
 		AE8804972DE0AC8B00C132D2 /* FavouriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8804852DE0AC8B00C132D2 /* FavouriteView.swift */; };
-		AE8804982DE0AC8B00C132D2 /* FolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8804862DE0AC8B00C132D2 /* FolderView.swift */; };
-		AE8804992DE0AC8B00C132D2 /* GuideDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8804872DE0AC8B00C132D2 /* GuideDetailView.swift */; };
-		AE88049A2DE0AC8B00C132D2 /* GuideListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8804882DE0AC8B00C132D2 /* GuideListView.swift */; };
-		AE88049B2DE0AC8B00C132D2 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8804892DE0AC8B00C132D2 /* GuideView.swift */; };
 		AE88049C2DE0AC8B00C132D2 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88048A2DE0AC8B00C132D2 /* HistoryView.swift */; };
 		AE88049D2DE0AC8B00C132D2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88048B2DE0AC8B00C132D2 /* HomeView.swift */; };
 		AE88049E2DE0AC8B00C132D2 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88048C2DE0AC8B00C132D2 /* LandingView.swift */; };
@@ -34,10 +30,6 @@
 		AE64A2EC2DE10CA400854B9A /* AttractionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionDetailView.swift; sourceTree = "<group>"; };
 		AE8804832DE0AC8B00C132D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AE8804852DE0AC8B00C132D2 /* FavouriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteView.swift; sourceTree = "<group>"; };
-		AE8804862DE0AC8B00C132D2 /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
-		AE8804872DE0AC8B00C132D2 /* GuideDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideDetailView.swift; sourceTree = "<group>"; };
-		AE8804882DE0AC8B00C132D2 /* GuideListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideListView.swift; sourceTree = "<group>"; };
-		AE8804892DE0AC8B00C132D2 /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		AE88048A2DE0AC8B00C132D2 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		AE88048B2DE0AC8B00C132D2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		AE88048C2DE0AC8B00C132D2 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
@@ -101,10 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				AE8804852DE0AC8B00C132D2 /* FavouriteView.swift */,
-				AE8804862DE0AC8B00C132D2 /* FolderView.swift */,
-				AE8804872DE0AC8B00C132D2 /* GuideDetailView.swift */,
-				AE8804882DE0AC8B00C132D2 /* GuideListView.swift */,
-				AE8804892DE0AC8B00C132D2 /* GuideView.swift */,
 				AE88048A2DE0AC8B00C132D2 /* HistoryView.swift */,
 				AE88048B2DE0AC8B00C132D2 /* HomeView.swift */,
 				AE88048C2DE0AC8B00C132D2 /* LandingView.swift */,
@@ -213,11 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE8804972DE0AC8B00C132D2 /* FavouriteView.swift in Sources */,
-				AE8804982DE0AC8B00C132D2 /* FolderView.swift in Sources */,
-				AE8804992DE0AC8B00C132D2 /* GuideDetailView.swift in Sources */,
-				AE88049A2DE0AC8B00C132D2 /* GuideListView.swift in Sources */,
 				AE8804AA2DE0ACBD00C132D2 /* Attraction.swift in Sources */,
-				AE88049B2DE0AC8B00C132D2 /* GuideView.swift in Sources */,
 				AE64A2ED2DE10CA400854B9A /* AttractionDetailView.swift in Sources */,
 				AE88049C2DE0AC8B00C132D2 /* HistoryView.swift in Sources */,
 				AE8804D52DE0B67500C132D2 /* CitiesListView.swift in Sources */,
