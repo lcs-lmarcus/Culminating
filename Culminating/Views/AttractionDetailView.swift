@@ -10,8 +10,7 @@ import SwiftUI
 struct AttractionDetailView: View {
     // MARK: Stored properties
     let attraction: Attraction
-//    @EnvironmentObject private var viewModel: CitiesListViewModel
-//    @Environment(\.dismiss)   private var dismiss
+
     // MARK: Computed properties
     var body: some View {
         VStack (alignment: .leading) {
@@ -37,28 +36,13 @@ struct AttractionDetailView: View {
                                         )
                                 }
 
-                                // — Right: the labels + values
+                               
                                 VStack(alignment: .leading, spacing: 8) {
-                                    // If you have a Date property on Attraction, uncomment:
-                                    /*
-                                    Text("Date")
-                                        .font(.headline)
-                                    Text(dateFormatter.string(from: attraction.date))
-                                        .padding(.bottom, 8)
-                                    */
 
                                     Text("Address")
                                         .font(.headline)
                                     Text(attraction.address)
                                         .padding(.bottom, 8)
-
-                                    // If you track a folder or city name, uncomment:
-                                    /*
-                                    Text("Folder")
-                                        .font(.headline)
-                                    Text(attraction.folderName)
-                                        .padding(.bottom, 8)
-                                    */
                                 }
                             }
                             .padding(.horizontal)
@@ -68,11 +52,6 @@ struct AttractionDetailView: View {
                     .font(.headline)
 
                 HStack(spacing: 4) {
-//                    ForEach(1...5, id: \.self) { star in
-//                        Image(systemName: star <= attraction.rating
-//                              ? "star.fill"
-//                              : "star")
-//                            .font(.title3)
                     ForEach(0..<attraction.rating) { _ in
                         Image(systemName: "star.fill")
                             .foregroundColor(.yellow)
@@ -90,41 +69,6 @@ struct AttractionDetailView: View {
             .padding(.horizontal)
 
             Spacer(minLength: 20)
-            
-            
-//            HStack {
-//                // From CHATGPT
-//                if let ui = attraction.photo {
-//                    Image(uiImage: ui)
-//                        .resizable()
-//                        .scaledToFit()
-//                        .frame(maxHeight: 250)
-//                        .cornerRadius(8)
-//                        .padding()
-//                }
-//                VStack {
-//                    HStack {
-//                        Text(attraction.address)
-//                            .font(.subheadline)
-//                            .foregroundColor(.secondary)
-//                            .padding(.bottom)
-//                        
-//                        Spacer()
-//                    }
-//                    HStack {
-//                        ForEach(0..<attraction.rating) { _ in
-//                            Image(systemName: "star.fill")
-//                        }
-//                    }
-//                    .padding(.bottom)
-//                    Text(attraction.description)
-//                    
-//                }
-//            }
-
-
-            
-            
             Spacer()
         }
         .padding()
