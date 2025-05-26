@@ -15,34 +15,114 @@ struct AttractionDetailView: View {
     // MARK: Computed properties
     var body: some View {
         VStack (alignment: .leading) {
-            HStack {
-                // From CHATGPT
-                if let ui = attraction.photo {
-                    Image(uiImage: ui)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxHeight: 250)
-                        .cornerRadius(8)
-                        .padding()
-                }
-                HStack {
-                    Text(attraction.address)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                        .padding(.bottom)
-                    
-                    Spacer()
-                }
-            }
+            HStack(alignment: .top, spacing: 16) {
+                                // — Left: the photo
+                                if let ui = attraction.photo {
+                                    Image(uiImage: ui)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 150, height: 150)
+                                        .clipped()
+                                        .cornerRadius(8)
+                                } else {
+                                    // placeholder
+                                    Rectangle()
+                                        .fill(Color(.systemGray5))
+                                        .frame(width: 150, height: 150)
+                                        .cornerRadius(8)
+                                        .overlay(
+                                            Image(systemName: "photo")
+                                                .font(.title)
+                                                .foregroundColor(.gray)
+                                        )
+                                }
 
-            // From ChatGpt
-            HStack {
-                ForEach(0..<attraction.rating) { _ in
-                    Image(systemName: "star.fill")
+                                // — Right: the labels + values
+                                VStack(alignment: .leading, spacing: 8) {
+                                    // If you have a Date property on Attraction, uncomment:
+                                    /*
+                                    Text("Date")
+                                        .font(.headline)
+                                    Text(dateFormatter.string(from: attraction.date))
+                                        .padding(.bottom, 8)
+                                    */
+
+                                    Text("Address")
+                                        .font(.headline)
+                                    Text(attraction.address)
+                                        .padding(.bottom, 8)
+
+                                    // If you track a folder or city name, uncomment:
+                                    /*
+                                    Text("Folder")
+                                        .font(.headline)
+                                    Text(attraction.folderName)
+                                        .padding(.bottom, 8)
+                                    */
+                                }
+                            }
+                            .padding(.horizontal)
+            // Rating and Description
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Rating")
+                    .font(.headline)
+
+                HStack(spacing: 4) {
+//                    ForEach(1...5, id: \.self) { star in
+//                        Image(systemName: star <= attraction.rating
+//                              ? "star.fill"
+//                              : "star")
+//                            .font(.title3)
+                    ForEach(0..<attraction.rating) { _ in
+                        Image(systemName: "star.fill")
+                            .foregroundColor(.yellow)
+                    }
                 }
             }
-            .padding(.bottom)
-            Text(attraction.description)
+            .padding(.horizontal)
+            .padding(.bottom, 10)
+    
+            VStack(alignment: .leading, spacing: 10) {
+                Text("Caption")
+                    .font(.headline)
+                Text(attraction.description)
+            }
+            .padding(.horizontal)
+
+            Spacer(minLength: 20)
+            
+            
+//            HStack {
+//                // From CHATGPT
+//                if let ui = attraction.photo {
+//                    Image(uiImage: ui)
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(maxHeight: 250)
+//                        .cornerRadius(8)
+//                        .padding()
+//                }
+//                VStack {
+//                    HStack {
+//                        Text(attraction.address)
+//                            .font(.subheadline)
+//                            .foregroundColor(.secondary)
+//                            .padding(.bottom)
+//                        
+//                        Spacer()
+//                    }
+//                    HStack {
+//                        ForEach(0..<attraction.rating) { _ in
+//                            Image(systemName: "star.fill")
+//                        }
+//                    }
+//                    .padding(.bottom)
+//                    Text(attraction.description)
+//                    
+//                }
+//            }
+
+
             
             
             Spacer()
