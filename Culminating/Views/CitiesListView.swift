@@ -13,7 +13,8 @@ struct CitiesListView: View {
     
     // Creates an instance of the Cities view model
     // (THE SOURCE OF TRUTH FOR DATA IN THIS APP)
-    @StateObject var viewModel = CitiesListViewModel(cities: sampleCities)
+    @StateObject private var viewModel = CitiesListViewModel(cities: sampleCities)
+    //    @StateObject var viewModel = CitiesListViewModel(cities: sampleCities)
     @State var showingNewFolderView = false
     
     
@@ -23,16 +24,28 @@ struct CitiesListView: View {
         @Bindable var viewModelBindable = viewModel
         
         NavigationStack {
-            List($viewModel.cities) { $currentCity in
-                NavigationLink {
-                    CityDetailView(city: $currentCity)
-                } label: {
-                    Text(currentCity.name)
+            List {
+                ForEach($viewModel.cities) { $currentcity in
+                    NavigationLink {
+                        CityDetailView(city: $currentcity)
+                            .environmentObject(viewModel)
+                    } label: {
+                        Text(currentcity.name)
+                    }
                 }
-            }
-            .onDelete(perform: viewModel.deleteCity)
-            .navigationTitle("Tour Guide")
-            //             Button for adding a new city
+                //            List($viewModel.cities) { $currentCity in
+                //                NavigationLink {
+                //                    CityDetailView(city: $currentCity)
+                //                } label: {
+                //                    Text(currentCity.name)
+                //                }
+                //            }
+                .onDelete { offsets in
+                    viewModel.deleteCity(at: offsets)
+                }
+                .navigationTitle("Tour Guide")
+                }
+            // toolbar - button for adding a new city
             .toolbar {
                 ToolbarItem(placement: .automatic) {
                     Button {
@@ -45,17 +58,11 @@ struct CitiesListView: View {
             .sheet(isPresented: $showingNewFolderView) {
                 NewCityView()
                     .environment(viewModel)
-//                    .presentationDetents([.fraction(0.4), .medium])
-                //                              .environmentObject(viewModel)
-            }        }
-//        func deleteCity(at offsets: IndexSet) {
-//            viewModel.deleteCity(at: offsets)
-//        }
-
+            }
+        }
     }
 }
 
 #Preview {
     CitiesListView()
-//        .environmentObject(CitiesListViewModel)
 }

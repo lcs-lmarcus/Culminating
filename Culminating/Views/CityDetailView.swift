@@ -10,6 +10,7 @@ import SwiftUI
 struct CityDetailView: View {
     
     // MARK: Stored properties
+    
     @Binding var city: City
     @State var showingNewAttractionView = false
     

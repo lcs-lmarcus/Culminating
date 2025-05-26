@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Combine
 
 @Observable
-class CitiesListViewModel: Observable {
+class CitiesListViewModel: ObservableObject {
     
     // MARK: Stored properties
     
