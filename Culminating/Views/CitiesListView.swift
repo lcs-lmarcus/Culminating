@@ -13,13 +13,13 @@ struct CitiesListView: View {
     
     // Creates an instance of the Cities view model
     // (THE SOURCE OF TRUTH FOR DATA IN THIS APP)
-    @State var viewModel = CitiesListViewModel(cities: sampleCities)
-    
-    
+    @StateObject var viewModel = CitiesListViewModel(cities: sampleCities)
     @State var showingNewFolderView = false
+    
     
     // MARK: Computed properties
     var body: some View {
+        
         @Bindable var viewModelBindable = viewModel
         
         NavigationStack {
@@ -29,9 +29,10 @@ struct CitiesListView: View {
                 } label: {
                     Text(currentCity.name)
                 }
-                
             }
-            //             Button for adding a new guide / folder
+            .onDelete(perform: viewModel.deleteCity)
+            .navigationTitle("Tour Guide")
+            //             Button for adding a new city
             .toolbar {
                 ToolbarItem(placement: .automatic) {
                     Button {
@@ -46,12 +47,15 @@ struct CitiesListView: View {
                     .environment(viewModel)
 //                    .presentationDetents([.fraction(0.4), .medium])
                 //                              .environmentObject(viewModel)
-            }
-            .navigationTitle("Tour Guide")
-        }
+            }        }
+//        func deleteCity(at offsets: IndexSet) {
+//            viewModel.deleteCity(at: offsets)
+//        }
+
     }
 }
 
 #Preview {
     CitiesListView()
+//        .environmentObject(CitiesListViewModel)
 }

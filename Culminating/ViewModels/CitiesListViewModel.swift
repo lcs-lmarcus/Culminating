@@ -28,13 +28,12 @@ class CitiesListViewModel: Observable {
     func add(newCity: City) {
         self.cities.append(newCity)
     }
-    
-//    func addAttraction(newAttraction: Attraction) {
-//        self.attractions.append(newAttraction)
-//    }
-//    func delete(deleteAttraction: Attraction) {
-//        Attraction.removeAll { $0.id == Attraction.id }
-//      }
+    // CHATGPT: https://chatgpt.com/c/683495ad-bcd4-8010-b121-9132aa11e540
+    func deleteCity(at offsets: IndexSet) {
+        cities.remove(atOffsets: offsets)
+    }
+
+
     
 }
 

@@ -23,12 +23,17 @@ struct AttractionDetailView: View {
                 
                 Spacer()
             }
+
             // From ChatGpt
             HStack {
                 ForEach(0..<attraction.rating) { _ in
                     Image(systemName: "star.fill")
                 }
             }
+            .padding(.bottom)
+            Text(attraction.description)
+            
+            
             Spacer()
 //                .toolbar {
 //                    ToolbarItem(placement: .navigationBarTrailing) {
