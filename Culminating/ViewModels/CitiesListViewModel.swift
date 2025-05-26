@@ -15,9 +15,11 @@ class CitiesListViewModel: ObservableObject {
     
     // Defaulting array
     var cities: [City]
+    var deletedCities: [City]
     
-    init(cities: [City] = []) {
+    init(cities: [City] = [],deletedCities:[City] = []) {
         self.cities = cities
+        self.deletedCities = deletedCities
     }
     
 //    @Published var attractions: [Attraction] = sampleAttractions
@@ -31,9 +33,16 @@ class CitiesListViewModel: ObservableObject {
     }
     // CHATGPT: https://chatgpt.com/c/683495ad-bcd4-8010-b121-9132aa11e540
     func deleteCity(at offsets: IndexSet) {
+        // Append the cities at the offsets to deletedCities
+        let removed = offsets.map { cities[$0] }
+        deletedCities.append(contentsOf: removed)
         cities.remove(atOffsets: offsets)
+        print(deletedCities)
     }
-
+    
+    func deleteAttraction(in cityIndex: Int, at offsets: IndexSet) {
+        cities[cityIndex].attractions.remove(atOffsets: offsets)
+    }
 
     
 }

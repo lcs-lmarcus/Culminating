@@ -8,10 +8,26 @@
 import SwiftUI
 
 struct HistoryView: View {
+    @EnvironmentObject var viewModel: CitiesListViewModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            List {
+                ForEach($viewModel.deletedCities) { $currentcity in
+                    NavigationLink {
+                        CityDetailView(city: $currentcity)
+                    } label: {
+                        Text(currentcity.name)
+                    }
+                }
+                .onDelete { offsets in
+                    viewModel.deletedCities.remove(atOffsets: offsets)
+                }
+                .navigationTitle("Tour Guide")
+            }
+        }
     }
 }
+
 
 #Preview {
     HistoryView()

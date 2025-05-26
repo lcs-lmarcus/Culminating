@@ -12,7 +12,6 @@ struct NewCityView: View {
     
     // Get a reference to the view model
     @Environment(CitiesListViewModel.self) var viewModel
-
     // MARK: – Form state
     @State private var cityName: String = ""
     @State private var cityImage: Image? = nil

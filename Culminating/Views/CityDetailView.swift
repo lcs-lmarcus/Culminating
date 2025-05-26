@@ -13,16 +13,31 @@ struct CityDetailView: View {
     
     @Binding var city: City
     @State var showingNewAttractionView = false
-    
+    // Get a reference to the view model
+    @Environment(CitiesListViewModel.self) var viewModel
     // MARK: Computed properties
     var body: some View {
-        List(city.attractions) { currentAttraction in
-            NavigationLink {
-                AttractionDetailView(attraction: currentAttraction)
-            } label : {
-                Text(currentAttraction.name)
+        NavigationStack {
+        List {
+            ForEach(city.attractions) { attraction in
+                NavigationLink {
+                    AttractionDetailView(attraction: attraction)
+                } label: {
+                    Text(attraction.name)
+                }
+            }
+            .onDelete { offsets in
+                city.attractions.remove(atOffsets: offsets)
+            }
+
+//            .onDelete { offsets in
+//                city.attractions.remove(atOffsets: offsets)
+//            }
+
+
             }
         }
+
         .navigationTitle(city.name)
         //             Button for adding a new guide
         .toolbar {
@@ -71,5 +86,5 @@ struct CityDetailView: View {
                 )
             ]
         )))    }
-
+    .environmentObject(CitiesListViewModel(cities: sampleCities))
 }

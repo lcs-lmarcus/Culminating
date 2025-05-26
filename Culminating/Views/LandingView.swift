@@ -31,25 +31,25 @@ struct LandingView: View {
                 }
                 .tag(1)
             
-//            HistoryView()
-//                .tabItem {
-//                    Label {
-//                        Text("History")
-//                    } icon: {
-//                        Image(systemName: "clock.arrow.trianglehead.counterclockwise.rotate.90")
-//                    }
-//                }
-//                .tag(2)
-            
-            FavouriteView()
+            HistoryView()
                 .tabItem {
                     Label {
-                        Text("Favourite")
+                        Text("History")
                     } icon: {
-                        Image(systemName: "star.fill")
+                        Image(systemName: "clock.arrow.trianglehead.counterclockwise.rotate.90")
                     }
                 }
-                .tag(3)
+                .tag(2)
+            
+//            FavouriteView()
+//                .tabItem {
+//                    Label {
+//                        Text("Favourite")
+//                    } icon: {
+//                        Image(systemName: "star.fill")
+//                    }
+//                }
+//                .tag(3)
         }
         
     }
